@@ -1,0 +1,48 @@
+body {
+	background-color: #F2FFFC;
+	font-family: "Crimson Text", "Times New Roman", serif;
+	font-size: 20px;
+	line-height: 1.5;
+}
+
+main h1 {
+	font-size: 60px;
+	background-color: #851944;
+	color: #FFF;
+	text-align: center;
+	font-family: "Open Sans Condensed", sans-serif;	
+	padding: 25px;
+	margin: 0;
+	border-bottom: 10px solid black;
+}
+
+h2 {
+	font-size: 40px;
+	font-family: "Open Sans Condensed", "Arial", sans-serif;
+}
+
+p {
+	text-align: justify;
+}
+
+blockquote, aside, footer{
+	background-color: #D3DDDA;
+	padding: 20px;
+	border: 10px solid #C2CCCA;
+	width: 250px;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+blockquote {
+	border: 10px solid #C2CCCA;
+	width: 250px;
+	box-sizing: border-box;
+}
+
+main div {
+	width: 720px;
+	margin: auto;
+}
+
+
