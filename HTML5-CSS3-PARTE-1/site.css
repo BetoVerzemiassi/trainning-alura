@@ -9,13 +9,14 @@ h1, h2 {
 	font-family: "Open Sans Condensed", "Arial", sans-serif;
 }
 
-.sobre {
+.titulo-principal {
 	text-align: center;
 	background-color: #851944;
 	color: #FFF;
 	padding: 25px;
 	border-bottom: 10px solid black;
 	font-size: 60px;
+	text-transform: uppercase;
 }
 
 p {
@@ -54,6 +55,7 @@ footer {
 
 nav a {
 	color: #F2FFFC;
+	text-transform: lowercase;
 }
 
 main a {
@@ -85,7 +87,7 @@ aside h1 {
 }
 
 .icones-sociais li {
-	display: inline-block;
+	display: block;
 }
 
 strong {
@@ -98,4 +100,23 @@ em {
 
 h2 {
 	font-size: 30px;
+}
+
+.icones-sociais a {	
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	text-indent: -9999px;
+}
+
+.github {
+	background-image: url(github.png);
+}
+
+.twitter {
+	background-image: url(twitter.png);
+}
+
+.linkedin {
+	background-image: url(linkedin.png);
 }
