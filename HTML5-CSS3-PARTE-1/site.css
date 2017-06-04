@@ -24,12 +24,12 @@ p {
 	margin: 20px 0;
 }
 
-.recomendacao {
+blockquote {
 	background-color: #D9E5E3;
 	border: 10px solid #C2CCCA;
 	width: 250px;
 	box-sizing: border-box;
-	margin: 20px 40px;
+	margin: 20px 40px;	
 }
 
 .navegacao-site {
@@ -87,7 +87,7 @@ aside h1 {
 }
 
 .icones-sociais li {
-	display: block;
+	display: inline-block;
 }
 
 strong {
@@ -100,6 +100,7 @@ em {
 
 h2 {
 	font-size: 30px;
+	clear: both;
 }
 
 .icones-sociais a {	
@@ -119,4 +120,37 @@ h2 {
 
 .linkedin {
 	background-image: url(linkedin.png);
+}
+
+.fiat {
+	float: right;
+}
+
+.petrobras {
+	float: left;
+}
+
+aside, img {
+	float: right;
+	width: 15%;
+}
+
+aside {
+	clear: right;
+	box-sizing: border-box;
+}
+
+main {
+	float: left;
+	width: 85%;
+}
+
+footer {
+	clear: both;
+}
+
+cite {
+	font-style: italic;
+    float: right;
+    display: block;
 }
