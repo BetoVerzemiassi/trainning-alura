@@ -130,23 +130,32 @@ h2 {
 	float: left;
 }
 
-aside, img {
+aside, 
+.minha-foto {
 	float: right;
-	width: 15%;
+	box-sizing: border-box;
+	border-left: 10px solid black;
+	border-bottom: 10px solid black;	
 }
 
 aside {
 	clear: right;
-	box-sizing: border-box;
+	width: 15%;
+	position: relative;
+	top: 310px;	
 }
 
 main {
 	float: left;
 	width: 85%;
+	padding-bottom: 80px;
 }
 
 footer {
 	clear: both;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 }
 
 cite {
@@ -154,3 +163,15 @@ cite {
     float: right;
     display: block;
 }
+
+.minha-foto {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+/*
+position: referência
+relative: ele mesmo
+absolute: janela;
+*/
