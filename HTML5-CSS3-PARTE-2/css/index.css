@@ -204,9 +204,10 @@ body {
             transform: translate(-50%, -50%) translateZ(2px) rotate(10deg) scale(.25);
 }
 .titulo-principal {
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
     position: relative;
+    background-image: linear-gradient(to bottom, #F00, #000);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;    
 }
 .banner-twitter {
     position: absolute;
@@ -253,3 +254,12 @@ body {
 .blog .mais-recente a {
     color: #F26;
 }
+
+
+/*
+background-attachment: fixed; 
+
+com essa propriedade conseguimos deixar um elemento na página fixo 
+efeito paralaxe
+
+*/
