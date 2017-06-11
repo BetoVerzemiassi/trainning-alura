@@ -69,3 +69,27 @@ button:hover,
 button:focus {
     background-color: #8C1D3D;
 }
+
+label[for="nome"]{
+	position: relative;
+}
+
+label[for="nome"]:after{
+	content: "";
+	background-color: #666;
+	background-repeat: no-repeat;
+	background-image: url(../imagens/usuario.png);
+	background-size: 50% 50%;
+	background-position: center;
+	width: 2em;
+	height: 2em;
+	position: absolute;
+	top: 100%;
+	left: 0;
+}
+
+#nome{
+	width: calc(100% - 2em);
+	position: relative;
+	left: 2em;
+}
