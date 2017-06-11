@@ -262,4 +262,21 @@ background-attachment: fixed;
 com essa propriedade conseguimos deixar um elemento na página fixo 
 efeito paralaxe
 
+
+PSEUDOCLASSES
+
+- ESTRUTURAIS
+
+:first-child
+:last-child
+:nth-child
+:nth-of-child
+
+- DINÂMICAS
+
+:hover
+:focus
+:active
+:checked
+
 */

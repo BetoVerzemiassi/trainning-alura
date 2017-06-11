@@ -5,6 +5,18 @@ body {
     line-height: 1.5;
 }
 
+main a:hover,
+main a:focus,
+footer a:hover,
+footer a:focus {
+    color: red;
+}
+
+.navegacao-site a:hover,
+.navegacao-site a:focus {
+    text-shadow: 0 0 2px pink;
+}
+
 h1,
 h2,
 .subtitulo-principal {
