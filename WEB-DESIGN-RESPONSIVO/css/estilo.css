@@ -169,21 +169,3 @@ header {
 			background: #555;
 			margin-left: 1.5em;
 		}
-
-.secao {
-	float: left;
-	width: 33%;
-}
-
-.mini {
-	float: left;
-	width: 50%;
-}
-
-/*
-2 colunas ? 50%
-3 colunas ? 33%
-4 colunas ? 25%
-5 colunas ? 20%
-
-*/
