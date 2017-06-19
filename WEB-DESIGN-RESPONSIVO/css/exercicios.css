@@ -1,7 +1,32 @@
 .secao{
-  float: left;
-  width: 33%;
+  width: 100%;
 }
+
+/*Telas não muito pequenas, Min: seria de 600px para mais, Max: no maximo 400 ou seja de 400 para baixo*/
+@media (min-width: 600px){
+	.secao {
+		width: 50%;
+	}
+}
+/*Desktop*/
+@media (min-width: 1000px){
+	.secao {
+		width: 33.33%;
+	}
+}
+
+@media (min-width: 600px){
+	html {
+		font-size: 1.125em;
+	}
+}
+
+@media (min-width: 1000px){
+	html {
+		font-size: 1.25em;
+	}
+}
+
 .mini{
   float: left;
   width: 50%;
