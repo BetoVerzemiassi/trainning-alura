@@ -11,3 +11,5 @@ Praticando conteúdo visto em todos os cursos.
 * HTML5 e CSS3 II: Turbinando as suas páginas
 
 * Web Design Responsivo: Páginas que se adaptam do mobile ao desk
+
+* JavaScript: Programando na linguagem da web
