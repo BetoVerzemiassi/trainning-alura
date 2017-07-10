@@ -104,3 +104,71 @@
 					tdIMC.textContent = imc.toFixed(2);
 				}		
 			}
+
+
+			/*Aula 04 Eventos, Formulários e Criando Elementos*/
+
+			//addEventListener = escutador de eventos
+			//event.preventDefault() = previne o comportamento padrão de um evento
+			//value = pega o valor de em um campo
+			//createElement = cria um elemento HTML	
+			//appendChild = adiciona como filho o elemento passado como parâmetro
+
+			var botaoAdicionar = document.querySelector("#adicionar-paciente");
+			botaoAdicionar.addEventListener("click", function(event){
+				event.preventDefault();
+
+				var form = document.querySelector("#form-adiciona");
+
+				//Capturando os valores
+				var nome = form.nome.value;
+				var peso = form.peso.value;
+				var altura = form.altura.value;
+				var gordura = form.gordura.value;
+
+				//Criando a nova linha
+				var pacienteTr  = document.createElement("tr");
+
+				//Criando as TDs para cada item
+				var nomeTd = document.createElement("td");
+				var pesoTd = document.createElement("td");
+				var alturaTd = document.createElement("td");
+				var gorduraTd = document.createElement("td");
+				var imcTd = document.createElement("td");
+
+				//Colocando os dados nas TDs
+				nomeTd.textContent = nome;
+				pesoTd.textContent = peso;
+				alturaTd.textContent = altura;
+				gorduraTd.textContent = gordura;
+
+				//Adicionando elemento dentro do outro
+				pacienteTr .appendChild(nomeTd);
+				pacienteTr .appendChild(pesoTd);
+				pacienteTr .appendChild(alturaTd);
+				pacienteTr .appendChild(gorduraTd);
+
+				//Colocando as informações na tabela
+				var tabela = document.querySelector("#tabela-pacientes");
+    			tabela.appendChild(pacienteTr);
+			});
+
+
+				/*
+				Qual código Javascript abaixo cria uma <div> como esta :
+					<div>
+					    <h1 class="titulo"> Mirror Fashion </h1>
+					    <p> Uma loja de roupa fantástica</p>
+					</div>
+				*/
+				
+				var div = document.createElement("div");
+				var h1 = document.createElement("h1");
+				h1.classList.add("titulo");
+				h1.textContent = "Mirror Fashion";
+
+				var p = document.createElement("p");
+				p.textContent = "Uma loja de roupa fantástica";
+
+				div.appendChild(h1);
+				div.appendChild(p);
