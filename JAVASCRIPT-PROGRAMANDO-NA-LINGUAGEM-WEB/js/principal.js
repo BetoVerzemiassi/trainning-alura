@@ -172,3 +172,41 @@
 
 				div.appendChild(h1);
 				div.appendChild(p);
+
+
+				/*
+				Para cada evento existente no JavaScript, há a propriedade 
+				on + nomeDoEvent. No caso, temos onclick para o evento click, 
+				onmouseover para o evento mouseover e assim por diante. Nesse caso, 
+				a função que desejamos executar é atribuída direto na propriedade. 
+				No entanto, essa forma tem uma limitação, como estamos guardando a 
+				função em uma propriedade, se adicionarmos outra função, essa sobrescreverá a anterior.
+
+
+				<button id="botao">clique-me</button>
+				<script>
+
+				    var botao = document.querySelector('#botao');
+
+				    function botaoHandler() {
+
+				        alert('Botão clicado');
+				    }
+
+				     function outroHandler() {
+
+				        alert('Botão clicado também!');
+				    }
+
+
+				    botao.onclick = botaoHandler;
+				    botao.onclick = outroHandler; // substitui botaoHandler
+				</script>
+
+				Sendo assim, a boa prática é trabalhar com addEventListener() mesmo que você
+				só queria adicionar um único evento. Porque mais tarde, se outro desenvolvedor
+				quiser adicionar outro evento para o mesmo elemento, não corremos o risco de 
+				substituir a função já associada por outra.
+
+				*/
+
