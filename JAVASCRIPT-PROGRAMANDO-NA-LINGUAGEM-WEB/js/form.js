@@ -7,6 +7,7 @@
 //appendChild = adiciona como filho o elemento passado como parâmetro
 //reset() - limpa os dados do formulário, para não inserir um paciente igual
 //push() - Para array, adiciona informaçãoes em um array
+//innerHtml - Controla o html interno de um elemento
 
 var botaoAdicionar = document.querySelector("#adicionar-paciente");
 	botaoAdicionar.addEventListener("click", function(event){
@@ -21,8 +22,7 @@ var botaoAdicionar = document.querySelector("#adicionar-paciente");
 		var erros = validaPaciente(paciente);
 
 		if(erros.length > 0){
-			var mensagemErro = document.querySelector("#mensagem-erro");
-			mensagemErro.textContent = erros;
+			exibeMensagensDeErro(erros);
 			return;
 		}
 
@@ -31,7 +31,19 @@ var botaoAdicionar = document.querySelector("#adicionar-paciente");
 		tabela.appendChild(pacienteTr);
 		
 		form.reset();
+		var mensagensErro = document.querySelector("#mensagens-erro");
+		mensagensErro.innerHTML = "Cadastrado com Sucesso";//Limpa as mensagem de erro e adiciona a mensagem Cadastrado com Sucesso
 	});
+
+	function exibeMensagensDeErro(erros){
+		var ul = document.querySelector("#mensagens-erro");
+		ul.innerHTML = "";//apaga as mensagens de erro insere as novas, conforme o usuário preenche o formulário
+		erros.forEach(function(erro) {
+			var li = document.createElement("li");
+			li.textContent = erro;
+			ul.appendChild(li);
+		});
+	}
 
 	function obtemPacienteDoFormulario(form){
 
@@ -78,11 +90,27 @@ var botaoAdicionar = document.querySelector("#adicionar-paciente");
 
 		var erros = [];
 
+		if(paciente.nome.length == 0){
+			erros.push("O nome não pode ser em branco");
+		}
+
 		 if(!validaPeso(paciente.peso)){
 			  erros.push("Peso é inválido");
 		 }
 		 if(!validaAltura(paciente.altura)){		 
 			 erros.push("Altura é inválida!");
+		 }
+
+		 if(paciente.gordura.length == 0){
+			 erros.push("A gordura não pode ser em branco");
+		 }
+
+		 if(paciente.peso.length == 0){
+			 erros.push("O peso não pode ser em branco");
+		 }
+
+		 if(paciente.altura.length == 0){
+			 erros.push("A altura não pode ser em branco");
 		 }
 
 		 return erros;
