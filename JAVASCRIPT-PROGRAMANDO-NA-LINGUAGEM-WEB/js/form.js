@@ -8,6 +8,10 @@
 //reset() - limpa os dados do formulário, para não inserir um paciente igual
 //push() - Para array, adiciona informaçãoes em um array
 //innerHtml - Controla o html interno de um elemento
+//remove() - remove elementos do HTML
+//target - alvo que foi clicado
+//parentNode - seleciona o pai do alvo clicado
+//setTimeOut - aguardar a execução de uma função por um tempo determinado
 
 var botaoAdicionar = document.querySelector("#adicionar-paciente");
 	botaoAdicionar.addEventListener("click", function(event){
