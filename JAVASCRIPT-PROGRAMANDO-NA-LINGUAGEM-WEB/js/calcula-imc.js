@@ -76,10 +76,10 @@ var pacientes = document.querySelectorAll(".paciente");
 
 		var tdIMC = paciente.querySelector(".info-imc");
 
-		var pesoEhValido = true;
-		var alturaEhValida = true;
+		var pesoEhValido = validaPeso(peso);
+		var alturaEhValida = validaAltura(altura);
 
-		if(peso <= 0 || peso >= 1000){
+		if(!pesoEhValido){
 		// console.log("Peso inválido!");
 			pesoEhValido = false;
 			tdImc.textContent = "Peso inválido!";
@@ -87,7 +87,7 @@ var pacientes = document.querySelectorAll(".paciente");
 			paciente.classList.add("paciente-invalido");
 		}	
 
-		if (altura <= 0 || altura >= 3.00) {
+		if (!alturaEhValida) {
 	    // console.log("Altura inválida!");
 		    alturaEhValida = false;
 		    tdImc.textContent = "Altura inválida!";
@@ -100,6 +100,26 @@ var pacientes = document.querySelectorAll(".paciente");
 			tdIMC.textContent = imc;
 		}		
 	}
+
+/**
+ Aula 06 Validação de Formularios
+ */
+
+ function validaPeso(peso){
+	 if(peso >= 0 && peso < 1000){
+		 return true;
+	 }else{
+		 return false;
+	 }
+ }
+
+ function validaAltura(altura){
+	 if(altura >= 0 && altura <= 3.0){
+		return true;
+	 }else{
+		 return false;
+	 }
+ }
 
 
 function calculaImc(peso,altura){
@@ -118,16 +138,16 @@ Qual código Javascript abaixo cria uma <div> como esta :
 </div>
 */
 				
-		var div = document.createElement("div");
-		var h1 = document.createElement("h1");
-		h1.classList.add("titulo");
-		h1.textContent = "Mirror Fashion";
+		// var div = document.createElement("div");
+		// var h1 = document.createElement("h1");
+		// h1.classList.add("titulo");
+		// h1.textContent = "Mirror Fashion";
 
-		var p = document.createElement("p");
-		p.textContent = "Uma loja de roupa fantástica";
+		// var p = document.createElement("p");
+		// p.textContent = "Uma loja de roupa fantástica";
 
-		div.appendChild(h1);
-		div.appendChild(p);
+		// div.appendChild(h1);
+		// div.appendChild(p);
 
 
 /*
@@ -161,6 +181,3 @@ quiser adicionar outro evento para o mesmo elemento, não corremos o risco de
 substituir a função já associada por outra.
 */
 
-/**
- Aula 05 Boas Práticas com Javascript
- */

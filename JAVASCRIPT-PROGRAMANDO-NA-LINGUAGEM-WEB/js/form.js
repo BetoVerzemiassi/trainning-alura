@@ -6,6 +6,7 @@
 //createElement = cria um elemento HTML	
 //appendChild = adiciona como filho o elemento passado como parâmetro
 //reset() - limpa os dados do formulário, para não inserir um paciente igual
+//push() - Para array, adiciona informaçãoes em um array
 
 var botaoAdicionar = document.querySelector("#adicionar-paciente");
 	botaoAdicionar.addEventListener("click", function(event){
@@ -16,6 +17,14 @@ var botaoAdicionar = document.querySelector("#adicionar-paciente");
 		var paciente = obtemPacienteDoFormulario(form);
 		
 		var pacienteTr = montatr(paciente);
+
+		var erros = validaPaciente(paciente);
+
+		if(erros.length > 0){
+			var mensagemErro = document.querySelector("#mensagem-erro");
+			mensagemErro.textContent = erros;
+			return;
+		}
 
 		//Colocando as informações na tabela, adicionando o paciente na tabela
 		var tabela = document.querySelector("#tabela-pacientes");
@@ -60,3 +69,21 @@ var botaoAdicionar = document.querySelector("#adicionar-paciente");
 
 		return td;
 	}
+
+	/**
+	 Aula 06 Validação de formularios
+	 */
+
+	 function validaPaciente(paciente) {
+
+		var erros = [];
+
+		 if(!validaPeso(paciente.peso)){
+			  erros.push("Peso é inválido");
+		 }
+		 if(!validaAltura(paciente.altura)){		 
+			 erros.push("Altura é inválida!");
+		 }
+
+		 return erros;
+	 }
