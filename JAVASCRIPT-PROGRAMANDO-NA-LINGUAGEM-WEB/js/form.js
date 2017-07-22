@@ -22,9 +22,6 @@ botaoAdicionar.addEventListener("click", function(event) {
     var form = document.querySelector("#form-adiciona");
     //Extraindo informações do paciente do form
     var paciente = obtemPacienteDoFormulario(form);
-
-    var pacienteTr = montatr(paciente);
-
     var erros = validaPaciente(paciente);
 
     if (erros.length > 0) {
@@ -32,14 +29,19 @@ botaoAdicionar.addEventListener("click", function(event) {
         return;
     }
 
-    //Colocando as informações na tabela, adicionando o paciente na tabela
-    var tabela = document.querySelector("#tabela-pacientes");
-    tabela.appendChild(pacienteTr);
+    adicionaPacienteNaTabela(paciente);
 
     form.reset();
     var mensagensErro = document.querySelector("#mensagens-erro");
     mensagensErro.innerHTML = "Cadastrado com Sucesso"; //Limpa as mensagem de erro e adiciona a mensagem Cadastrado com Sucesso
 });
+
+function adicionaPacienteNaTabela(paciente){
+    var pacienteTr = montatr(paciente);
+    //Colocando as informações na tabela, adicionando o paciente na tabela
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr);
+}
 
 function exibeMensagensDeErro(erros) {
     var ul = document.querySelector("#mensagens-erro");

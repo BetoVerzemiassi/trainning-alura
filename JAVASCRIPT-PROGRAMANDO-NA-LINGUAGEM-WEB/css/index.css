@@ -109,8 +109,7 @@ button{
 	width: 20%;
     display: block;
     clear: both;
-    margin: 10px 0px;
-
+    margin: 10px 0px;	
 }
 
 button:active{
