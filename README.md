@@ -13,3 +13,5 @@ Praticando conteúdo visto em todos os cursos.
 * Web Design Responsivo: Páginas que se adaptam do mobile ao desk
 
 * JavaScript: Programando na linguagem da web
+
+* jQuery: Domine a biblioteca mais popular do mercado
