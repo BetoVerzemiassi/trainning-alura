@@ -15,7 +15,7 @@ tamanhoFrase.text(numeroPalavras);//com argumento ela coloca o conteudo
 
 
  /**
-  *Aula 02 Evento com jQuery
+  Aula 02 Evento com jQuery
 
   on() - faz a ação do evento
   val() - pega o valor digitado no campo textarea, esse metodo da acesso ao que está dentro de uma tag de input, 
@@ -33,3 +33,27 @@ tamanhoFrase.text(numeroPalavras);//com argumento ela coloca o conteudo
       var qtdCaracteres = conteudo.length;
       $(".contador-caracteres").text(qtdCaracteres);
   });
+
+
+  /**
+   Aula 03 GameOver com eventos
+
+   focus() - o campo ganha o foco para ser digitado.
+   setInterval() - faz com que uma determinada ação seja executada em um intervalo de tempo.
+   attr() - adiciona um atributo
+   clearInterval() - recebe o id do setInterval como parâmetro e para com a contagem
+   one() - essa função escuta o evento apenas uma vez ao contrário do "on() - onde fica o tempo todo escutando o evento"
+   */
+
+   var tempoRestante = $("#tempo-digitacao").text();
+   campo.one("focus", function(){
+        var cronometroID = setInterval(function(){
+            tempoRestante--;
+            console.log(tempoRestante);
+            $("#tempo-digitacao").text(tempoRestante);
+            if(tempoRestante < 1){
+                campo.attr("disabled",true);
+                clearInterval(cronometroID);//para com a contagem assim que acabar o tempo
+            }            
+        },1000);
+   });
