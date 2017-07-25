@@ -36,7 +36,7 @@ botaoAdicionar.addEventListener("click", function(event) {
     mensagensErro.innerHTML = "Cadastrado com Sucesso"; //Limpa as mensagem de erro e adiciona a mensagem Cadastrado com Sucesso
 });
 
-function adicionaPacienteNaTabela(paciente){
+function adicionaPacienteNaTabela(paciente) {
     var pacienteTr = montatr(paciente);
     //Colocando as informações na tabela, adicionando o paciente na tabela
     var tabela = document.querySelector("#tabela-pacientes");
