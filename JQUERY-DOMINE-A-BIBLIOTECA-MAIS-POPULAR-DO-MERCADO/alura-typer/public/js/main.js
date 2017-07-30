@@ -1,10 +1,12 @@
 var tempoInicial = $("#tempo-digitacao").text();
 var campo = $(".campo-digitacao");
 
+//Executado assim que todos os elementos forem carregados na página $(document).ready(function(){});
 $(function() {
     atualizaTamanhoFrase();
     inicializaContadores();
     inicializaCronometro();
+    inicializaMarcadores();
     $("#botao-reiniciar").click(reiniciaJogo);
 });
 
@@ -38,6 +40,7 @@ function inicializaCronometro() {
                 campo.attr("disabled", true);
                 clearInterval(cronometroID); //para com a contagem assim que acabar o tempo
                 $("#botao-reiniciar").attr("disabled", false);
+                campo.toggleClass("campo-desativado");;
             }
         }, 1000);
     });
@@ -50,7 +53,27 @@ function reiniciaJogo() {
     $("#contador-caracteres").text("0");
     $("#tempo-digitacao").text(tempoInicial);
     inicializaCronometro(); //chamamos a função;
+    campo.toggleClass("campo-desativado");
+    campo.removeClass("borda-vermelha"); 
+    campo.removeClass("borda-verde"); 
 }
+
+function inicializaMarcadores() {
+    var frase = $(".frase").text();
+    campo.on("input", function() {
+        var digitado = campo.val();
+        var comparavel = frase.substr(0 , digitado.length);
+
+        if(digitado == comparavel) {
+            campo.addClass("borda-verde");
+            campo.removeClass("borda-vermelha");
+        } else {
+            campo.addClass("borda-vermelha");
+            campo.removeClass("borda-verde");
+        }
+    });
+}
+
 
 
 
@@ -94,3 +117,44 @@ one() - essa função escuta o evento apenas uma vez ao contrário do "on() - on
 
  
  */
+
+ /**
+  Aula 05 Funções que auxiliam os estilos
+
+  css() - Altera o estilo, passando a propriedade que queremos e seu valor. Porém sabemos que o certo não é certo
+  mexer com estilo de uma página diretamente no JavaScript. Logo devemos mexer em css. Com a função abaixo adicionamos
+  a classe com o estilo desejado.
+  addClass() - Adiciona uma classe ao campo selecionado da página.
+  removeClass() - Remove a classe do campo selecionado da página.
+  toggleClass() - Funciona da seguinte maneira, se no momento que a função for chamada, o elemento possuir a classe, 
+  ela será removida. Mas se o elemento não possuir a classe, ela será adicionada.
+
+    campo.toggleClass("campo-desativado", true); //sempre adiciona
+
+  substr() - Pega pedaço de uma string 
+
+================================================================  
+
+PARA SABER MAIS: SUBSTR COM ES6
+
+  Como o JavaScript está evoluindo e melhorando já existe uma forma mais fácil de verificar se uma string faz parte 
+  da outra string. Se o seu navegador já dar suporte ao ECMA Script 6 você pode simplesmente executar:
+
+ var digitouCorreto = frase.startsWith(digitado);
+    if(digitouCorreto) {
+        campo.addClass("borda-verde");
+    } else {
+        campo.addClass("borda-vermelha");
+    }
+Ainda mais enxuto:
+
+if( frase.startsWith(digitado)) {
+ campo.addClass("borda-verde");
+} else {
+ campo.addClass("borda-vermelha");
+}
+A função startsWith devolve true ou false, se a frase começa com o valor digitado ou não. Teste isso agora no console, 
+digitando por exemplo:
+
+"ECMA Script 6".startsWith("ECMA")
+  */
