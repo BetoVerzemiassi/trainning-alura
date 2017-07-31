@@ -37,13 +37,17 @@ function inicializaCronometro() {
             tempoRestante--;
             $("#tempo-digitacao").text(tempoRestante);
             if (tempoRestante < 1) {
-                campo.attr("disabled", true);
-                clearInterval(cronometroID); //para com a contagem assim que acabar o tempo
-                $("#botao-reiniciar").attr("disabled", false);
-                campo.toggleClass("campo-desativado");;
+                clearInterval(cronometroID); //para com a contagem assim que acabar o tempo                
+                inserePlacar();
             }
         }, 1000);
     });
+}
+
+function finalizaJogo(){
+    campo.attr("disabled", true);                
+    $("#botao-reiniciar").attr("disabled", false);
+    campo.toggleClass("campo-desativado");
 }
 
 function reiniciaJogo() {
@@ -74,6 +78,25 @@ function inicializaMarcadores() {
     });
 }
 
+function inserePlacar(){
+    var corpoTabela = $(".placar").find("tbody");
+    var usuario = "Alberto";
+    var numPalavras = $("#contador-palavras").text();
+    var botaoRemover = "<a href='#'><i class='small material-icons'>delete</i></a>" ;
+
+    var linha = "<tr>"+
+                    "<td>"+ usuario +"</td>"+
+                    "<td>"+ numPalavras +"</td>"+
+                    "<td>"+ botaoRemover + "</td>"+
+                "</tr>";
+
+    corpoTabela.prepend(linha);
+}   
+
+$(".botao-remover").click(function(e) { 
+    e.preventDefault();
+    $(this).parent().parent().remove();
+});
 
 
 
@@ -158,3 +181,15 @@ digitando por exemplo:
 
 "ECMA Script 6".startsWith("ECMA")
   */
+
+  /**
+   Aula 06 Criando e Manipulando elementos com jQuery
+
+   find() - Busca filho de um elemento que já selecionamos previamente, podemos utilizar a função .find() do 
+   jQuery, que funciona de modo semelhante a função seletora ($), porém fazendo a busca apenas do filho do elemento.
+   append() - Adiciona a string ou elemento HTML que  é passada como parâmetro com último filho do elemento em qual
+   ela for chamada.
+   prepend() - Adiciona a string/html passada como primeiro filho do elemento selecionado.
+   remove() - Remove o item selecionado.
+   parent() - Acessa o elemento acima do elemento selecionado com jQuery
+ */
