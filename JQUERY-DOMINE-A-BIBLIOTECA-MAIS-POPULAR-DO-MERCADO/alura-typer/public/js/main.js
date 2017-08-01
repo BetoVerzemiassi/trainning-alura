@@ -50,18 +50,6 @@ function finalizaJogo(){
     campo.toggleClass("campo-desativado");
 }
 
-function reiniciaJogo() {
-    campo.attr("disabled", false);
-    campo.val("");
-    $("#contador-palavras").text("0");
-    $("#contador-caracteres").text("0");
-    $("#tempo-digitacao").text(tempoInicial);
-    inicializaCronometro(); //chamamos a função;
-    campo.toggleClass("campo-desativado");
-    campo.removeClass("borda-vermelha"); 
-    campo.removeClass("borda-verde"); 
-}
-
 function inicializaMarcadores() {
     var frase = $(".frase").text();
     campo.on("input", function() {
@@ -78,27 +66,17 @@ function inicializaMarcadores() {
     });
 }
 
-function inserePlacar(){
-    var corpoTabela = $(".placar").find("tbody");
-    var usuario = "Alberto";
-    var numPalavras = $("#contador-palavras").text();
-    var botaoRemover = "<a href='#'><i class='small material-icons'>delete</i></a>" ;
-
-    var linha = "<tr>"+
-                    "<td>"+ usuario +"</td>"+
-                    "<td>"+ numPalavras +"</td>"+
-                    "<td>"+ botaoRemover + "</td>"+
-                "</tr>";
-
-    corpoTabela.prepend(linha);
-}   
-
-$(".botao-remover").click(function(e) { 
-    e.preventDefault();
-    $(this).parent().parent().remove();
-});
-
-
+function reiniciaJogo() {
+    campo.attr("disabled", false);
+    campo.val("");
+    $("#contador-palavras").text("0");
+    $("#contador-caracteres").text("0");
+    $("#tempo-digitacao").text(tempoInicial);
+    inicializaCronometro(); //chamamos a função;
+    campo.toggleClass("campo-desativado");
+    campo.removeClass("borda-vermelha"); 
+    campo.removeClass("borda-verde"); 
+}
 
 /**
   Aula 01 Introdução ao jQuery
