@@ -31,7 +31,12 @@ function novaLinha(usuario, palavras) {
 
 function removeLinha() {
     event.preventDefault();
-    $(this).parent().parent().remove();
+    var linha = $(this).parent().parent(); //a Função remove() está retirando de uma maneira muito bruta, vou utilizar o fadeOut()
+
+    linha.fadeOut(1000); //Aqui escondemos a linha
+    setTimeout(function() {
+        linha.remove(); //Aqui excluimos definitivamente a linha
+    }, 1000);
 }
 
 //jQuery parte II
@@ -52,4 +57,12 @@ hide() - Esconde o conteúdo
 toggle() - Adiciona ou esconde um elemento
 slideDown() - Realiza a transição de uma maneira mais suave, podemos passar por parâmetro para a função .slideDown(600);
 slideToggle() - Essa função alterna entre as funções slideDown() e slideUp()
+fadeOut() - Diminui a opacidade de um elemento aos poucos, até o seu total desaparecimento.
+
+Então temos sempre que ter em mente que devemos remover um elemento após realizar o fadeOut(), já que essa função só faz
+com que o elemento desaparecça da tela, mas ainda fique no html da página.
+
+Assim como existem o slideUp, slideDown e slideToggle, existem funções semelhantes que executam o fade, o fadeIn, fadeOut 
+e fadeToggle, respectivamente.
+
 */
