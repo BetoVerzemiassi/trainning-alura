@@ -65,4 +65,6 @@ com que o elemento desaparecça da tela, mas ainda fique no html da página.
 Assim como existem o slideUp, slideDown e slideToggle, existem funções semelhantes que executam o fade, o fadeIn, fadeOut 
 e fadeToggle, respectivamente.
 
+
+
 */
