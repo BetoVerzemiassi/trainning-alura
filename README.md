@@ -16,6 +16,12 @@
 
  * jQuery: Avance na biblioteca mais popular do mercado parte II
 
+  > * **Necesário subir o servidor nodeJS**
+
+  >> * Entrar na pasta servidor, rodar o comando npm install para baixar as dependências do projeto. Após ess procedimento rodar o comando "npm start" - Assim nossa aplicação vai rodar na porta 3000 na seguinte url abaixo
+
+  >>> * **URL:** http://localhost:3000/principal.html 
+
  # CURSOS DE JAVASCRIPT
 
  * JavaScript: Programando na linguagem da web
