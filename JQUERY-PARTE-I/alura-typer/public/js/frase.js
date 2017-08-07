@@ -1,7 +1,17 @@
 $("#botao-frase").click(fraseAleatoria);
 
 function fraseAleatoria(){
-    $.get("http://localhost:3000/frases", trocaFraseAleatoria);
+    $("#spinner").toggle();//mostrando o spinner
+    $.get("http://localhost:3000/frases", trocaFraseAleatoria)
+    .fail(function(){
+        $("#erro").toggle();//ao falhar mostra a mensagem de erro
+        setTimeout(function(){
+            $("#erro").toggle();
+        },1500);
+    })
+    .always(function(){//sempre escondendo executa a função, mesmo ela dando certo ou errado
+        $("#spinner").toggle();
+    });
 }
 
 function trocaFraseAleatoria(data){
@@ -40,4 +50,10 @@ $.get("http://localhost:3000/frases", imprimeConsole);
 function imprimeConsole(dados){
     console.log(dados);
 }
+
+ Aula 03 Tratando erros e melhorando a experiência 
+
+ .fail() - Recebe uma função anônima com o código que é executado quando um erro acontece.
+ .always() - Essa função é executada depois da requisição AJAX devemos esconder o spinner,
+ importante é que sempre devemos esconder o spinner, tanto faz se a requisição concluiu com sucesso ou falhou.
  */
