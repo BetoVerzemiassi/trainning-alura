@@ -85,4 +85,9 @@ function imprimeConsole(dados){
  importante é que sempre devemos esconder o spinner, tanto faz se a requisição concluiu com sucesso ou falhou.
 
 Aula 04 Enviando dados com AJAX
+
+Aula 05 Eviando dados com POST
+
+- O nosso servidor além da url /frases também tem disponível a url /placar , que se você acessar pelo navegador
+ (atráves de um GET) ele irá te mostrar os dados um placar salvo.
  */

@@ -1,3 +1,6 @@
+$("#botao-placar").click(mostraPlacar);
+$("#botao-sync").click(sincronizaPlacar);
+
 function inserePlacar() {
     var corpoTabela = $(".placar").find("tbody");
     var usuario = "Alberto"
@@ -52,10 +55,12 @@ function removeLinha() {
 
 //jQuery parte II
 
-$("#botao-placar").click(mostraPlacar);
-
 function mostraPlacar() {
     $(".placar").stop().slideToggle(600);
+}
+
+function sincronizaPlacar(){
+    
 }
 
 /*
