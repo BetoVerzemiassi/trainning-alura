@@ -30,7 +30,7 @@ function buscaFrase(){
     var dados = {
         id: fraseId
     };
-    $.get("http://localhost:3000/frases",dados,trocaFrase)
+    $.get("http://localhost:3000/frases",dados,trocaFrase)//Esse dados é a variavel com o objeto criado com os dados solicitados
     .fail(function(){
         $("#erro").toggle();//ao falhar mostra a mensagem de erro
         setTimeout(function(){
