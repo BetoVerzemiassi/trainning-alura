@@ -1,4 +1,5 @@
 $("#botao-frase").click(fraseAleatoria);
+$("#botao-frase-id").click(buscaFrase);
 
 function fraseAleatoria(){
     $("#spinner").toggle();//mostrando o spinner
@@ -7,7 +8,7 @@ function fraseAleatoria(){
         $("#erro").toggle();//ao falhar mostra a mensagem de erro
         setTimeout(function(){
             $("#erro").toggle();
-        },1500);
+        },2000);
     })
     .always(function(){//sempre escondendo executa a função, mesmo ela dando certo ou errado
         $("#spinner").toggle();
@@ -20,6 +21,32 @@ function trocaFraseAleatoria(data){
     frase.text(data[numeroAleatorio ].texto);//texto é uma propriedade do objeto array, onde está a frase
     atualizaTamanhoFrase();
     atualizaTempoInicial(data[numeroAleatorio ].tempo);
+}
+
+function buscaFrase(){
+    $("#spinner").toggle();//mostrando o spinner
+    var fraseId = $("#frase-id").val();
+    //Enviando um objeto javascript com os dados
+    var dados = {
+        id: fraseId
+    };
+    $.get("http://localhost:3000/frases",dados,trocaFrase)
+    .fail(function(){
+        $("#erro").toggle();//ao falhar mostra a mensagem de erro
+        setTimeout(function(){
+            $("#erro").toggle();
+        },2000);
+    })
+    .always(function(){
+        $("#spinner").toggle();
+    })
+}
+
+function trocaFrase(data){
+    var frase = $(".frase");
+    frase.text(data.texto);
+    atualizaTamanhoFrase();
+    atualizaTempoInicial(data.tempo);
 }
 
 /**
@@ -56,4 +83,6 @@ function imprimeConsole(dados){
  .fail() - Recebe uma função anônima com o código que é executado quando um erro acontece.
  .always() - Essa função é executada depois da requisição AJAX devemos esconder o spinner,
  importante é que sempre devemos esconder o spinner, tanto faz se a requisição concluiu com sucesso ou falhou.
+
+Aula 04 Enviando dados com AJAX
  */
