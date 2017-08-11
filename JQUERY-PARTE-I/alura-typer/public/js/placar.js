@@ -88,6 +88,19 @@ function sincronizaPlacar(){
 }
 
 /*
+Esta função será a responsável por fazer um GET para a url que contêm o placar, 
+trazer os dados, e adicioná-los ao HTML assim que a página for carregada.
+*/
+function atualizaPlacar(){
+    $.get("http://localhost:3000/placar",function(data){
+        $(data).each(function(){
+            var linha = novaLinha(this.usuario, this.pontos);//Construindo a linha da tabela, com a função novaLinha onde recebe usuario  palvaras
+            $("tbody").append(linha);//com a linha criada, adicionamos no HTML com o append()
+        });
+    });
+}
+
+/*
 Curso Jquery Parte II
 
 Aula 01 Animações com jQuery
