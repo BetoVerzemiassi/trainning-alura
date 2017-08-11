@@ -90,4 +90,7 @@ Aula 05 Eviando dados com POST
 
 - O nosso servidor além da url /frases também tem disponível a url /placar , que se você acessar pelo navegador
  (atráves de um GET) ele irá te mostrar os dados um placar salvo.
+
+each() - Percorre o array, A função each() executa a ação da função passada por parâmetro para cada item do array 
+em que ela foi chamada, no caso, o array linhas.
  */
