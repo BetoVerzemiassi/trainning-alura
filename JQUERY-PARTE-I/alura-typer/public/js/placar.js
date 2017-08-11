@@ -64,7 +64,7 @@ function sincronizaPlacar(){
     var linhas = $("tbody>tr");
 
     linhas.each(function(){
-        var usuario = $(this).find("td:nth-child(1)").text();
+        var usuario = $(this).find("td:nth-child(1)").text();//this faz referência a linhas
         var palavras = $(this).find("td:nth-child(2)").text();
     
         //Monta o objeto a ser criado, salva os dados que obtemos de cada linha dentro de um novo array      
@@ -74,16 +74,17 @@ function sincronizaPlacar(){
         };
 
         placar.push(score);//adiciona dentro do placar com a função push
-
-        var dados = {
-            placar: placar
-        };
-
-        //Realiza a requição AJAX, gravando os dados.
-        $.post("http://localhost:3000/placar",dados,function(){
-            console.log("Placar sincronizado com sucesso");
-        });
     });
+
+    var dados = {
+        placar: placar
+    };
+
+    //Realiza a requição AJAX, gravando os dados.
+    $.post("http://localhost:3000/placar",dados,function(){
+        console.log("Placar sincronizado com sucesso");
+    });
+    
 }
 
 /*
