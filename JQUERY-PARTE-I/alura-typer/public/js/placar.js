@@ -95,6 +95,7 @@ function atualizaPlacar(){
     $.get("http://localhost:3000/placar",function(data){
         $(data).each(function(){
             var linha = novaLinha(this.usuario, this.pontos);//Construindo a linha da tabela, com a função novaLinha onde recebe usuario  palvaras
+            linha.find(".botao-remover").click(removeLinha);
             $("tbody").append(linha);//com a linha criada, adicionamos no HTML com o append()
         });
     });
