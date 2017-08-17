@@ -3,7 +3,7 @@ $("#botao-frase-id").click(buscaFrase);
 
 function fraseAleatoria(){
     $("#spinner").toggle();//mostrando o spinner
-    $.get("http://localhost:3000/frases", trocaFraseAleatoria)
+    $.get("http://localhost:3001/frases", trocaFraseAleatoria)
     .fail(function(){
         $("#erro").toggle();//ao falhar mostra a mensagem de erro
         setTimeout(function(){
@@ -30,7 +30,7 @@ function buscaFrase(){
     var dados = {
         id: fraseId
     };
-    $.get("http://localhost:3000/frases",dados,trocaFrase)//Esse dados é a variavel com o objeto criado com os dados solicitados
+    $.get("http://localhost:3001/frases",dados,trocaFrase)//Esse dados é a variavel com o objeto criado com os dados solicitados
     .fail(function(){
         $("#erro").toggle();//ao falhar mostra a mensagem de erro
         setTimeout(function(){
@@ -93,4 +93,22 @@ Aula 05 Eviando dados com POST
 
 each() - Percorre o array, A função each() executa a ação da função passada por parâmetro para cada item do array 
 em que ela foi chamada, no caso, o array linhas.
+
+Aula 06 Same Origin Policy e Cors
+
+- Proteção do browser onde bloqueia fazer requisições para outros servidor que não são da mesma origem do meu.
+- Para conseguir realizar a requisição é necessário estar na mesa origem, o que seria isso ?
+
+- Mesma origem = Mesmo host, Mesma porta e mesmo protocolo do site que você está
+http://localhost:3000/principal.html
+
+CORS - Cross-Origin Resource Sharing
+
+É preciso configurar as outras origens no servidor. Aqui o outro servidor (não a origem que já funciona com AJAX) 
+adiciona um cabeçalho na resposta HTTP e baseado nessa resposta o navegador permitir uma requisição para outra 
+origem.
+
+O cabeçalho é bem simples e faz parte do protocolo HTTP:
+
+Access-Control-Allow-Origin: http://localhost:3000, http://192.168.0.83:3000
  */
