@@ -25,5 +25,4 @@
  # CURSOS DE JAVASCRIPT
 
  * JavaScript: Programando na linguagem da web
-
- * Curso JavaScript avançado I: ES6, orientação a objetos e padrões de projetos
+ 
